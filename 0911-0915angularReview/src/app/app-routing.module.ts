@@ -7,7 +7,8 @@ import { Route3Component } from './routeLazy/route3/route3.component';
 const routes: Routes = [
   {
     path: 'r1',
-    component: Route1Component
+    loadChildren: () =>
+    import('./routeLazy/route1/route1.module').then((m)=>m.Route1Module)
   },
   {
     path: 'r2',
