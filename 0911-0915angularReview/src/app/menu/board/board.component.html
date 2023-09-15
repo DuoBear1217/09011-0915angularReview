@@ -1,0 +1,7 @@
+<p>餐點價目表!!</p>
+<mat-list *ngFor="let item of meal">
+  <mat-divider></mat-divider>
+  <mat-list-item>{{ item.name }}</mat-list-item>
+  <mat-list-item *ngIf="item.price > 50"><span appTooExpensive>{{ item.price | priceDollar: '$' }}</span></mat-list-item>
+  <mat-list-item *ngIf="item.price <= 50"><span>{{ item.price | priceDollar: '$' }}</span></mat-list-item>
+</mat-list>
